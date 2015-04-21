@@ -8,7 +8,7 @@ Change the unit-of-work class on the fly by updating the configuration without r
   <ul>
     <li>Dynamic-unit-of-work design pattern</li>
     <li>Factory design pattern</li>
-    <li>Asycn commands</li>
+    <li>Async commands</li>
     <li>Ioc</li>
     <li>Critical sections</li>
     <li>Multithreaded synchronization</li>
