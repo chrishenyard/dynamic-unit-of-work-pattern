@@ -1,0 +1,29 @@
+﻿@model Region.Models.ChangeSettingViewModel
+@{
+    ViewBag.Title = "Change Setting";
+}
+
+<form action="/Admin/ChangeSetting" method="post" class="form-horizontal" role="form">
+    @Html.AntiForgeryToken()
+    <h4>Change Setting Form</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Key, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("Key", ViewBag.Keys as SelectList)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Setting, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("Setting", ViewBag.Settings as SelectList)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Change setting" class="btn btn-default" />
+            <div class="text-danger">@ViewBag.Status</div>
+        </div>
+    </div>
+</form>

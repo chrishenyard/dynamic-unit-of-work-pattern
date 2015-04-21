@@ -1,0 +1,18 @@
+﻿#map-canvas {
+    height: 400px;
+    width: 500px;
+}
+
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.region-text {
+    float: left;
+}
+
+.region-map {
+    float: right;
+}

@@ -1,0 +1,83 @@
+﻿@model Region.Models.RegionViewModel
+@{
+    ViewBag.Title = "Zipcode";
+}
+
+<link href="~/Content/Region.css" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+
+	function init() {
+		var latLng = new google.maps.LatLng(this.lat, this.lng);
+
+		var mapOptions = {
+			zoom: 12,
+			center: latLng
+		};
+
+		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+		var marker = new google.maps.Marker({
+		    position: latLng,
+			map: map,
+			title: '@Model.Zipcode.PrimaryCity ?? "Dynamic Unit of Work Pattern" '
+		});
+	}
+
+	function initializeMap (lat, lng) {
+		this.lat = lat;
+		this.lng = lng;
+	}
+
+	initializeMap.prototype.init = init;
+
+	var map = new initializeMap(@Model.Zipcode.Latitude, @Model.Zipcode.Longitude);
+	google.maps.event.addDomListener(window, 'load', map.init.bind(map));
+
+</script>
+
+<div class="wrapper">
+    <div class="container">
+
+        @if (!ViewData.ModelState.IsValid) {
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        }
+        else {
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="region-text">
+                        <table>
+                            <tr>
+                                <td>Type:</td>
+                                <td>@Model.RegionRepositoryType</td>
+                            </tr>
+                            <tr>
+                                <td>Zip:</td>
+                                <td>@Model.Zipcode.Zip</td>
+                            </tr>
+                            <tr>
+                                <td>City:</td>
+                                <td>@Model.Zipcode.PrimaryCity</td>
+                            </tr>
+                            <tr>
+                                <td>Latitude:</td>
+                                <td>@Model.Zipcode.Latitude</td>
+                            </tr>
+                            <tr>
+                                <td>Longitude:</td>
+                                <td>@Model.Zipcode.Longitude</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="map-canvas" class="region-map"></div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
