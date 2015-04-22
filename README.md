@@ -8,6 +8,7 @@ Change the unit-of-work class on the fly by updating the configuration without r
   <ul>
     <li>Dynamic-unit-of-work design pattern</li>
     <li>Factory design pattern</li>
+    <li>MVC</li>
     <li>Async commands</li>
     <li>Entity Framework</li>
     <li>Cache</li>
