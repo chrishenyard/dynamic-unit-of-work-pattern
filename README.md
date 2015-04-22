@@ -9,8 +9,10 @@ Change the unit-of-work class on the fly by updating the configuration without r
     <li>Dynamic-unit-of-work design pattern</li>
     <li>Factory design pattern</li>
     <li>Async commands</li>
+    <li>Entity Framework</li>
+    <li>Cache</li>
     <li>Ioc</li>
-    <li>Critical sections</li>
+    <li>Locks (critical sections)</li>
     <li>Multithreaded synchronization</li>
   </ul>
 </div>
@@ -19,5 +21,6 @@ Change the unit-of-work class on the fly by updating the configuration without r
   <h1>JavaScript</h1>
   <ul>
     <li>Bind</li>
+    <li>Google Maps API</li>
   </ul>
 </div>
